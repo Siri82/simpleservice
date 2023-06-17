@@ -4,7 +4,8 @@ pipeline {
     PATH = "C:\\WINDOWS\\SYSTEM32"
     } 
     tools {
-        maven "Maven"
+        
+	maven "Maven"
         jdk "OpenJDK17"
     }
 
