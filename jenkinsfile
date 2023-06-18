@@ -15,6 +15,12 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+	   stage('Sonar') {
+	   steps {
+	       bat 'mvn clean compile package org.sonarsource.scanner.maven:sonar-maven-plugin:RELEASE:sonar  -D sonar.token=squ_598b4aa0173b51e970514328eebd6e9331aaa3a9 -f ./pom.xml'
+	       }
+	       }
+
 		  stage('Test') {
           steps {
               bat 'mvn test'
